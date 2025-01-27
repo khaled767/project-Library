@@ -4,59 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #8d6e63; /* Light brown shade */
+            color: #5d4037; /* Darker brown for text */
+            font-family: Arial, sans-serif;
+        }
+        .intro{
+            display: grid;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        #add{
+            width: 220px;
+            height: 30px;
+            border-radius: 9px;
+        }
+        button{
+            background-color:#d7a68f;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 14px;
+            transition: background-color 0.9s, transform 0.7s;
+        }
+        button:hover{
+            background-color: #a05a39;
+            transform: scale(1.05);
+        }
+        .form{ 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #bd9071; /* Light beige shade */
+            border-radius: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 50%;
+            margin: 0 auto;
+            height: 300px;
+            width: 400px;
+        }
+        .inputClass input{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 40px;
+            margin: 7px;
+            padding:5px;
+            border-radius: 20px;
+             border: 1px solid #b58363; /* Border matching the theme */
+            background-color: #fff;
+            color: #5d4037;
+        }
+        .readCheckBox{
+            margin-top: 7px;
+            padding: 5px;
+            width: 30%;
+            display: flex;
+            justify-content:space-evenly;
+        }
+        .submitButton{
+            margin: 7px;
+            padding: 5px;
+            display: flex;
+            width: 30%;
+            height: 100px;
+            justify-content: space-evenly;
+        }
+        .submitButton button{
+            width: 140px;
+            height: 40px;
+            border-radius: 15px;
+        }
+        .book-card{
+            border: 2px solid #b58363; /* Medium brown border */
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: 250px; /* Fixed width for consistent design */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f7e7da; /* Very light brown */
+            color: #5d4037;
+        }
+        .book-card span{
+            font-weight: bold;
+        }
+        .bookshelf{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            background-color: #d9b291; /* Soft beige shade for bookshelf background */
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Project Library</h1>
-    <div class="addBooks">
-        <button id="add"> add book</button>
+  <div class="intro">
+      <h1>Project Library</h1>
+      <div class="addBooks">
+          <button id="add"> add book</button>
     </div>
+  </div>
     <div class="form">
+        <div class="inputClass">
         <input type="text" placeholder="title" id="title" >
         <input type="text" placeholder="author" id="author">
         <input type="number" placeholder="pages-number" id="pages">
+    </div>
+    <div class="readCheckBox">
         <input type="checkbox" placeholder="read" class="read" id="check">
-        <span class="status">Not read yet</span>
+        <span class="status">Not read</span>
+    </div>
+    <div class="submitButton">
         <button type="submit" id="save">save</button>
         <button type="reset" id="cancel">cancel</button>
     </div>
+    </div>
     <div class="bookshelf">
-        <table>
-            <tr>
-                <th>title</th>
-                <th> author</th>
-                <th> pages</th>
-                
-            </tr>
-            <tr>
-                <td>clean code</td>
-                <td> john David</td>
-                <td> 549</td>
-                <td><input type="checkbox" class="read"><span class="status">not read</span> </td>
-                <td> <button>delete</button></td>
-            </tr>
-            <tr>
-                <td>Under Lines</td>
-                <td>Peter Dog</td>
-                <td> 549</td>
-                <td><input type="checkbox" class="read"><span class="status">not read</span> </td>
-                <td> <button>delete</button></td>
-            </tr>
-            <tr>
-                <td>Mind Power</td>
-                <td> Omer yildiz</td>
-                <td> 795</td>
-                <td><input type="checkbox" class="read"><span class="status">not read</span> </td>
-                <td> <button>delete</button></td>
-            </tr>
-            <tr>
-                <td>Java</td>
-                <td> David Smith</td>
-                <td> 465</td>
-                <td><input type="checkbox" class="read"><span class="status">not read</span> </td>
-                <td> <button>delete</button></td>
-            </tr>
-            <script src="index.js"></script>
+        <table id="table">
+            <thead>
+            </thead>
+            <tbody>
+
+            </tbody>
         </table>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
